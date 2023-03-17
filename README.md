@@ -52,7 +52,7 @@ Let's Start ? :ok_hand:
 
   <details>
     <summary>
-      <strong>Start the App</strong>
+      <strong>:smile_cat: Start the App</strong>
     </summary>
     <br />
     Start this app running in bash the code:
