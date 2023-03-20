@@ -1,5 +1,10 @@
 import { Router } from 'express';
+import clothingRoutes from './clothingRoutes';
+import userRoutes from './userRoutes';
 
-const router = Router();
+const indexRouter = Router();
 
-export default router;
+indexRouter.use('/users', userRoutes);
+indexRouter.use('/clothings', clothingRoutes);
+
+export default indexRouter;
