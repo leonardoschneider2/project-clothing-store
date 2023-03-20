@@ -5,7 +5,10 @@
   "main": "server.js",
   "scripts": {
     "start": "ts-node src/server.ts",
-    "dev": "nodemon --exec ts-node src/server.ts"
+    "dev": "nodemon --exec ts-node src/server.ts",
+    "db:create": "npx sequelize-cli db:create $$ npx sequelize-cli db:migrate && npm sequelize-cli db:seed:all",
+    "db:drop": "npm sequelize-cli db:drop",
+    "db:reset": "npm run db:drop && npm run db:create"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +17,8 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mysql2": "^3.2.0",
-    "sequelize": "^6.29.3"
+    "sequelize": "^6.29.3",
+    "tsc": "^2.0.4"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",
