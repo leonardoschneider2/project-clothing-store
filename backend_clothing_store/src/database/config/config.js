@@ -1,4 +1,4 @@
-const config = {
+export default {
   development: {
     username: process.env.DATABASE_DEV_USER,
     password: process.env.DATABASE_DEV_PASSWORD,
