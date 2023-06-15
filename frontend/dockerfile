@@ -1,0 +1,23 @@
+# Base image
+FROM node:alpine
+
+# Diretório de trabalho dentro do contêiner
+WORKDIR /
+
+# Copia os arquivos do package.json e package-lock.json
+COPY package*.json ./
+
+# Instala as dependências
+RUN npm install
+
+# Copia o código do aplicativo
+COPY . .
+
+# Compila o aplicativo para produção
+RUN npm run build
+
+# Define a porta em que o aplicativo será executado
+EXPOSE 3000
+
+# Comando para iniciar o aplicativo
+CMD ["npm", "start"]
