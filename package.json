@@ -1,0 +1,15 @@
+{
+  "name": "clothing-store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "backend:dev": "",
+    "backend:start": "",
+    "frontend:start": "",
+    "database:clean": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,41 @@
+version: '3'
+services:
+  frontend:
+    build: frontend_clothing_store/
+    restart: on-failure
+    ports:
+      - 3000:3000
+    depends_on:
+      - backend
+    volumes:
+      - ./logs:/var/log/frontend
+    networks:
+      - safety-network-fullstack
+  backend:
+    build: backend_clothing_store/
+    restart: on-failure
+    ports:
+      - 3001:3001
+    environment:
+      - DB_HOST=database
+    depends_on:
+      - database
+    networks:
+      - safety-network-fullstack
+      - safety-network-database
+  database:
+    image: betrybe/docker-compose-example-database:v1
+    restart: on-failure
+    volumes:
+      - dados-do-banco:/var/lib/mysql
+    networks:
+      - safety-network-database
+volumes:
+  dados-do-banco
+networks:
+  safety-network-fullstack
+  safety-network-database
+
+# docker-compose up -d -- (-d para subir os containers separadamente e não ter todos os logs no mesmo console)
+# docker-compose logs database|frontend|backend -- logs de cada serviço separado
+# docker-compose down --
