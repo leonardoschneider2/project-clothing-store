@@ -10,12 +10,15 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       clothing_id: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       path_image: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       createdAt: {

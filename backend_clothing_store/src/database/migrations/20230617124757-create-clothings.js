@@ -10,15 +10,19 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       clothing_name: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       publisher_id: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       clothing_group_id: {
+        allowNull: true,
         type: Sequelize.STRING
       },
       price: {
+        allowNull: true,
         type: Sequelize.DOUBLE
       },
       createdAt: {
