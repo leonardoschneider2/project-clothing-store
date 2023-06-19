@@ -5,9 +5,12 @@
   "main": "src/app.js",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/server.js",
+    "db:up": "npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all",
+    "db:down": "npx sequelize db:drop",
+    "db:downseed": "npx sequelize db:seed:undo"
   },
-  "type": "module",
+  "type": "commonjs",
   "keywords": [],
   "author": "",
   "license": "ISC",
