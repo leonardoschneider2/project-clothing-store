@@ -6,7 +6,7 @@ const loginController = (req, res, next) => {
     console.log("I'm creating the log in route.")
 }
 
-export {
+module.exports = {
   registerController,
   loginController,
 }
