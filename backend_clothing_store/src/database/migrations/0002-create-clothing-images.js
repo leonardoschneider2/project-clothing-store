@@ -13,11 +13,11 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      clothing_id: {
+      clothingId: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      path_image: {
+      pathImage: {
         allowNull: false,
         type: Sequelize.STRING
       },

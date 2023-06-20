@@ -11,8 +11,8 @@ module.exports = {
         email: 'leo@email.com',
         password: '123123',
         role: 'admin',
-        created_at: dateConversor(),
-        updated_at: dateConversor(),
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
     ], {});
   },

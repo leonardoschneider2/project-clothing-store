@@ -15,11 +15,14 @@ module.exports = (sequelize, DataTypes) => {
   }
   clothing_images.init({
     name: DataTypes.STRING,
-    clothing_id: DataTypes.INTEGER,
-    path_image: DataTypes.STRING
+    clothingId: DataTypes.INTEGER,
+    pathImage: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'clothing_images',
+    timestamps: true,
+    updatedAt: 'updateTimestamp',
+    underscored: true,
   });
   return clothing_images;
 };
