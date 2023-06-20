@@ -1,6 +1,6 @@
 const { users: Users } = require('../database/models');
 
-registerModel = async ({
+const registerModel = async ({
   email,
   password,
   name,
@@ -14,14 +14,40 @@ registerModel = async ({
       role,
     });
 
-    console.log(user.dataValues)
+    console.log(user.dataValues);
 
     return;
   } catch (error) {
     throw new Error(error)
   }
-}
+};
+
+
+const loginModel = async ({
+  password,
+  email,
+}) => {
+  try {
+    const { dataValues: user } = await Users.findOne({ where: { email }});
+
+    if (user.password === password) {
+      console.log("right access!");
+      return {
+        name: user.name,
+        email: user.email,
+        role: user.role,
+      };
+    } else {
+      throw new Error("User or password inválid!");
+    }
+
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
 
 module.exports = {
   registerModel,
+  loginModel,
 }

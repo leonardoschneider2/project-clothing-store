@@ -1,6 +1,6 @@
-const { registerModel } = require("../models/login.model");
+const { registerModel, loginModel } = require("../models/login.model");
 
-registerUserService = async ({
+const registerUserService = async ({
   email,
   password,
   name,
@@ -23,7 +23,7 @@ registerUserService = async ({
 };
 
 
-registerAdminService = async ({
+const registerAdminService = async ({
   email,
   password,
   name,
@@ -49,7 +49,28 @@ registerAdminService = async ({
 };
 
 
+const loginService = async ({
+  email,
+  password,
+}) => {
+  try {
+    const response = await loginModel({
+      email,
+      password,
+    });
+  
+    // creating jwt
+
+    // returning jwt
+    return { token: 'JWT not running yet.' };
+  } catch (error) {
+    throw new Error(error);
+  }
+}
+
+
 module.exports = {
   registerUserService,
   registerAdminService,
+  loginService,
 }

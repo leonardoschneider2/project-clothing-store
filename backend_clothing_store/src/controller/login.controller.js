@@ -1,4 +1,4 @@
-const { registerAdminService, registerUserService } = require("../service/login.service");
+const { registerAdminService, registerUserService, loginService } = require("../service/login.service");
 
 
 const registerController = async (req, res, next) => {
@@ -26,13 +26,25 @@ const registerController = async (req, res, next) => {
 
       return res.status(201).json("User successfully registered.")
     } catch (error) {
-      res.status(500).json({ error: error.message });
+      next(error);
     }
 }
 
 
 const loginController = async (req, res, next) => {
-    console.log("I'm creating the log in route.")
+    try {
+      const { email, password } = req.body;
+
+      const response = await loginService({
+        email,
+        password,
+      });
+
+      console.log("response Login Controller: ", response);
+      return res.status(200).json({ token: 'ASHIBATADA' });
+    } catch (error) {
+      next(error);
+    }
 }
 
 
