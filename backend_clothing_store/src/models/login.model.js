@@ -7,9 +7,14 @@ registerModel = async ({
   role,
 }) => {
   try {
-    const user = await Users.findAll({})
+    const user = await Users.create({
+      email,
+      password,
+      name,
+      role,
+    });
 
-    console.log(user)
+    console.log(user.dataValues)
 
     return;
   } catch (error) {

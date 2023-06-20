@@ -13,19 +13,19 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      clothingId: {
+      clothing_id: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      pathImage: {
+      path_image: {
         allowNull: false,
         type: Sequelize.STRING
       },
-      createdAt: {
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE
       }

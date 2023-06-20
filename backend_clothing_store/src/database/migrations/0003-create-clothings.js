@@ -9,15 +9,15 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      clothingName: {
+      clothing_name: {
         allowNull: false,
         type: Sequelize.STRING
       },
-      publisherId: {
+      publisher_id: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      clothingGroupId: {
+      clothing_group_id: {
         allowNull: true,
         type: Sequelize.STRING
       },
@@ -25,11 +25,11 @@ module.exports = {
         allowNull: true,
         type: Sequelize.DOUBLE
       },
-      createdAt: {
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE
       }

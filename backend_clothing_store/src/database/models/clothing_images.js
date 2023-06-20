@@ -20,9 +20,6 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'clothing_images',
-    timestamps: true,
-    updatedAt: 'updateTimestamp',
-    underscored: true,
   });
   return clothing_images;
 };
