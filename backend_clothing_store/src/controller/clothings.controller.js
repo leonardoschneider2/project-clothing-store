@@ -14,9 +14,14 @@ const registerClothingController = async (req, res, next) => {
       price,
     } = req.body;
 
-    const response = await registerClothingService();
+    const response = await registerClothingService({
+      userId,
+      clothingName,
+      clothingGroupId,
+      price,
+    });
 
-    res.status(201).json({ ok: true });
+    res.status(201).json(response);
   } catch (error) {
     next(error);
   }
@@ -27,7 +32,7 @@ const getClothingsController = async (req, res, next) => {
   try {
     const response = await getClothingsService();
 
-    res.status(200).json({ ok: true });
+    res.status(200).json(response);
   } catch (error) {
     next(error);
   }
@@ -38,9 +43,9 @@ const getClothingsByIdController = async (req, res, next) => {
   try {
     const { id } = req.params;
 
-    const response = await getClothingsByIdService();
+    const response = await getClothingsByIdService({ id });
 
-    res.status(200).json({ ok: true });
+    res.status(200).json(response);
   } catch (error) {
     next(error);
   }
