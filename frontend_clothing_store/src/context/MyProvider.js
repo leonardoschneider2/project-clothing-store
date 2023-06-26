@@ -3,7 +3,6 @@ import MyContext from './MyContext'
 
 export default function MyProvider({ children }) {
 
-
   const context = {
 
   };
