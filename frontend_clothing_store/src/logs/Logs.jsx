@@ -10,7 +10,6 @@ export default function Logs() {
         <Route path="/logs/register" component={ Register } />
         <Route path="/logs/login" component={ Login } />
       </Switch>
-      
     </>
   )
 }
