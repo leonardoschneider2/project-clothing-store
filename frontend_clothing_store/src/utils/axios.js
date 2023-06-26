@@ -1,8 +1,7 @@
 import axios from 'axios';
-import "dotenv/config"
 
 const axiosConnect = axios.create({
-  baseURL: process.env.BACKEND_BASEURL,
+  baseURL: 'http://localhost:3001',
   timeout: 2500,
 });
 

@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import MyContext from '../../context/MyContext';
 
 export default function Login() {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
 
-
+  const { logging } = useContext(MyContext)
 
   return (
     <div className="page__login">
@@ -12,6 +13,7 @@ export default function Login() {
         <form
           onSubmit={ (e) => {
             e.preventDefault();
+            logging(email, password);
           } }
         >
           <input 
@@ -28,8 +30,7 @@ export default function Login() {
           />
 
           <button
-            type="button"
-            onClick={ () => {} }
+            type="submit"
           >
             LOGIN
           </button>
